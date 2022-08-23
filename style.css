@@ -1,0 +1,356 @@
+@charset "UTF-8";
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* General style */
+
+:root {
+  /* Color */
+  --color-pale-blue: hsl(225, 100%, 94%);
+  --color-bright-blue: hsl(245, 75%, 52%);
+  --color-pale-bright-blue: hsl(245, 75%, 61%);
+
+  --color-very-pale-blue: hsl(225, 100%, 98%);
+  --color-desaturated-blue: hsl(224, 23%, 55%);
+  --color-dark-blue: hsl(223, 47%, 23%);
+  --color-white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --ff-primary: 'Red Hat Display', sans-serif;
+
+  --fs-mobile-xs: 1.3rem;
+  --fs-mobile-s: 1.4rem;
+  --fs-mobile-m: 1.5rem;
+  --fs-mobile-l: 2.2rem;
+
+  --fs-desktop-xs: 1.4rem;
+  --fs-desktop-s: 1.5rem;
+  --fs-desktop-m: 1.6rem;
+  --fs-desktop-l: 2.8rem;
+
+  --fw-normal: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+
+  /* makes easier to calculate rem */
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  min-height: 100%;
+  padding: 24px 24px 3em;
+
+  background: url(./images/pattern-background-mobile-variant.svg) top center / 100% no-repeat;
+  background-color: var(--color-pale-blue);
+
+  color: var(--color-desaturated-blue);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-mobile-m);
+  font-weight: var(--fw-normal);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-bright-blue);
+  transition: color 300ms ease-out, transform 50ms ease-out;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-pale-bright-blue);
+}
+
+a:active {
+  transform: scale(0.95);
+}
+
+.a-reverse {
+  color: inherit;
+}
+
+.a-reverse:hover,
+.a-reverse:focus {
+  color: var(--color-dark-blue);
+}
+
+.button {
+  display: inline-block;
+  padding: 1.2em;
+  border-radius: 12px;
+  background-color: var(--color-bright-blue);
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 20px hsla(245, 75%, 52%, 25%);
+  transition: background-color 300ms ease-out, transform 50ms ease-out;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--color-white);
+  background-color: var(--color-pale-bright-blue);
+
+}
+
+.button:active {
+  color: var(--color-white);
+  transform: scale(0.95);
+}
+
+/* Card */
+
+.card {
+  max-width: 450px;
+  min-width: 300px;
+
+  background-color: var(--color-white);
+  border-radius: 20px;
+  box-shadow: 0 15px 20px hsl(223, 47%, 23%, 25%);
+
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 36px 25px;
+  text-align: center;
+}
+
+.card_title {
+  margin-bottom: 20px;
+
+  color: var(--color-dark-blue);
+  font-size: var(--fs-mobile-l);
+  font-weight: var(--fw-black);
+}
+
+.card_text {
+  margin-bottom: 26px;
+  padding: 0 10px;
+
+  line-height: 1.65;
+}
+
+.card_order-list {
+  margin-bottom: 25px;
+
+  background-color: var(--color-very-pale-blue);
+  border-radius: 10px;
+
+  font-size: var(--fs-mobile-s);
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+
+  padding: 15px;
+}
+
+.order-img {
+  margin-right: 20px;
+}
+
+.order-name {
+  margin-bottom: 8px;
+
+  color: var(--color-dark-blue);
+  font-weight: var(--fw-black);
+}
+
+.order-change {
+  margin-left: auto;
+
+  font-size: var(--fs-mobile-xs);
+  font-weight: var(--fw-bold);
+}
+
+.order-cancel {
+  font-weight: var(--fw-black);
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.attribution {
+  padding: 1em;
+  font-size: var(--fs-mobile-xs);
+  text-align: center;
+}
+
+.attribution a {
+  font-weight: var(--fw-bold);
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    background: var(--color-pale-blue);
+  }
+
+  .card_hero {
+    overflow: hidden;
+  }
+
+  .card_hero svg {
+    transition: transform 300ms ease-in;
+  }
+
+  .card_hero:hover svg {
+    transform: scale(1.1);
+  }
+
+  .card_content {
+    padding: 50px 48px;
+  }
+
+  .card_title {
+    margin-bottom: 22px;
+    font-size: var(--fs-desktop-l);
+  }
+
+  .card_text {
+    margin-bottom: 20px;
+    font-size: var(--fs-desktop-m);
+  }
+
+  .card_order-list {
+    margin-bottom: 32px;
+  }
+
+  .order-info {
+    font-size: var(--fs-desktop-m);
+  }
+
+  .order-item {
+    padding: 24px;
+  }
+
+  .order-name {
+    margin-bottom: 10px;
+  }
+
+  .order-change {
+    font-size: var(--fs-desktop-xs);
+  }
+
+  .order-proceed {
+    margin-bottom: 34px;
+  }
+
+  .attribution {
+    font-size: var(--fs-desktop-xs);
+  }
+
+  .music-note {
+    animation: music 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .wave {
+    overflow: hidden;
+  }
+
+  .wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    z-index: -1;
+
+    background: url(./images/pattern-background-desktop.svg) top center / 50% repeat-x;
+    animation: wave 20s linear infinite;
+  }
+
+  .wave::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    z-index: -1;
+
+    background: url(./images/pattern-background-desktop-variant.svg) top center / 50% repeat-x;
+    animation: swell 20s linear .5s infinite;
+  }
+
+  .text-underline-animated {
+    background: linear-gradient(var(--color-bright-blue), var(--color-bright-blue)) bottom / 100% 1px no-repeat;
+    text-decoration: none;
+    transition: color 300ms ease-out, background-size 300ms ease;
+  }
+
+  .text-underline-animated:hover,
+  .text-underline-animated:focus {
+    background-image: linear-gradient(var(--color-pale-bright-blue), var(--color-pale-bright-blue));
+    background-size: 0% 1px;
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+
+@keyframes swell {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(25%, -5%, 0);
+  }
+
+  100% {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+
+@keyframes music {
+  0% {
+    transform: scale(1) rotateZ(-25deg);
+  }
+
+  50%,
+  100% {
+    transform: scale(0.9);
+  }
+}
