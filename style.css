@@ -278,7 +278,7 @@ footer {
   }
 
   .wave {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .wave::before {
